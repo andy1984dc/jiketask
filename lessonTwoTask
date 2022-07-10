@@ -1,0 +1,11 @@
+sql.ErrNoRows 应该在当前函数处理不去上抛
+
+func GetDataNum() (int,error) {
+	....
+
+	if (errors.Is(err,sql.ErrNoRows)) {
+		return 0,nil
+	}
+
+	return 0,nil
+}
